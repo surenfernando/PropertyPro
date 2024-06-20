@@ -5,15 +5,15 @@ export default function Navbar() {
     <div>
       <nav>
         <div className="left">
-          <a href="/">
-            <img src="" alt="" />
+          <a className="logo" href="/">
+            <img src="/" alt="" />
             <span>PropertPro</span>
           </a>
 
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Contact</a>
-          <a href="">Agents</a>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Agents</a>
         </div>
 
         <div className="right">
