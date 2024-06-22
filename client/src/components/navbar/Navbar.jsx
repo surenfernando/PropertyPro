@@ -18,7 +18,9 @@ export default function Navbar() {
 
         <div className="right">
           <a href="">Sign In</a>
-          <a href="">Sign Up</a>
+          <a href="" className="register">
+            Sign Up
+          </a>
         </div>
       </nav>
     </div>
