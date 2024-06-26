@@ -32,10 +32,8 @@ export default function Navbar() {
             <a href="/">About</a>
             <a href="/">Contact</a>
             <a href="/">Agents</a>
-            <a href="">Sign In</a>
-            <a href="" className="register">
-              Sign Up
-            </a>
+            <a href="/">Sign In</a>
+            <a href="/">Sign Up</a>
           </div>
         </div>
       </nav>
