@@ -55,15 +55,21 @@ form {
     }
 
     @include md {
+      width: 200px;
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 200px;
+      }
+    }
+
+    @include sm {
       width: auto;
       &:nth-child(2),
       &:nth-child(3) {
         width: auto;
       }
-    }
-
-    @include sm {
       padding: 20px;
+      border: 1px solid #999;
     }
   }
 
@@ -72,6 +78,10 @@ form {
     cursor: pointer;
     background-color: #fece51;
     flex: 1;
+
+    @include sm {
+      padding: 10px;
+    }
 
     img {
       width: 24px;
