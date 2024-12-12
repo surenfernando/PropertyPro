@@ -15,16 +15,20 @@
       gap: 50px;
       height: 100%;
 
-      @include md {
+      @include lg{
+        padding-right: 50px;
+      }
+
+      @include md{
         padding: 0;
       }
 
-      @include sm {
+      @include sm{
         justify-content: flex-start;
       }
 
       .title {
-        font-size: 64pxs;
+        font-size: 64px;
 
         @include lg {
           font-size: 48px;
