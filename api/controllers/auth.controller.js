@@ -3,6 +3,7 @@ import prisma from "../lib/prisma.js";
 import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
+  //Extract data from req body
   const { username, email, password } = req.body;
 
   try {
@@ -49,17 +50,20 @@ export const login = async (req, res) => {
         message: "Invalid Password!",
       });
 
+    // create a token using JWT
     const age = 1000 * 60 * 60 * 24 * 7;
     const token = jwt.sign(
       {
         id: user.id,
+        isAdmin: true,
       },
       process.env.JWT_SECRET_KEY,
       { expiresIn: age }
     );
 
+    //
+    const { password: userPassword, ...userInfo } = user;
     //Generate cookie token and send to the user
-    // res.setHeader("Set-Cookie", "test=" + "myValue").json("success");
     res
       .cookie("token", token, {
         httpOnly: true,
@@ -67,7 +71,7 @@ export const login = async (req, res) => {
         maxAge: age,
       })
       .status(200)
-      .json({ message: "Login Successful" });
+      .json(userInfo);
   } catch (err) {
     console.log(err);
   }
